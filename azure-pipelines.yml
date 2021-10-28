@@ -33,7 +33,7 @@ steps:
     testAssemblyVer2: |
       **\*test*.dll
       !**\*TestAdapter.dll
-      !**\obj\**
+      !**\bin\**
     searchFolder: '$(System.DefaultWorkingDirectory)'
 - task: PublishBuildArtifacts@1
   inputs:
