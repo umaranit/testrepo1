@@ -9,6 +9,12 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
+parameters:
+- name: NewMajorVersion
+  displayName: 'New Major Version'
+  type: boolean
+  default:  false
+  
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
