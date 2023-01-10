@@ -32,8 +32,8 @@ steps:
   inputs:
     solution: '$(Parameters.solution)'
     msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactstagingdirectory)\\"'
-    platform: '$(BuildPlatform)'
-    configuration: '$(BuildConfiguration)'
+    platform: 'any cpu'
+    configuration: 'release'
 
 - task: SonarQubeAnalyze@5
   displayName: 'Run Code Analysis'
@@ -47,8 +47,8 @@ steps:
     testAssemblyVer2: |
      **\$(BuildConfiguration)\*test*.dll
      !**\obj\**
-    platform: '$(BuildPlatform)'
-    configuration: '$(BuildConfiguration)'
+    platform: 'any cpu'
+    configuration: 'release'
 
 - task: PublishSymbols@2
   displayName: 'Publish symbols path'
